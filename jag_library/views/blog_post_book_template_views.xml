@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="blog_post_book_template" name="Plantilla de Libro para Blog">
+    <div class="container o_jag_library_book_post">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <img
+            t-if="book.image_1920"
+            t-att-src="'/library/book/image/%s' % book_id"
+            class="img img-fluid shadow-sm mb-4"
+            alt="Book cover"
+          />
+        </div>
+        <div class="col-lg-8">
+          <p class="text-muted" t-if="book.author_ids">
+            <em>By: <t t-esc="', '.join(book.author_ids.mapped('name'))" /></em>
+          </p>
+          <div t-if="book.synopsis" class="mb-4">
+            <p t-field="book.synopsis" class="text-justify" />
+          </div>
+
+          <hr />
+
+          <h4>Book Details</h4>
+          <dl class="row">
+            <dt class="col-sm-3" t-if="book.publisher_id">Publisher</dt>
+            <dd class="col-sm-9" t-if="book.publisher_id">
+              <t t-esc="book.publisher_id.name" />
+            </dd>
+
+            <dt class="col-sm-3" t-if="book.isbn">ISBN</dt>
+            <dd class="col-sm-9" t-if="book.isbn">
+              <t t-esc="book.isbn" />
+            </dd>
+
+            <dt class="col-sm-3" t-if="book.genre_ids">Genres</dt>
+            <dd class="col-sm-9" t-if="book.genre_ids">
+              <span
+                t-foreach="book.genre_ids"
+                t-as="genre"
+                class="badge text-bg-secondary me-1"
+              >
+                <t t-esc="genre.name" />
+              </span>
+            </dd>
+
+            <dt class="col-sm-3" t-if="book.number_of_pages > 0">Number of Pages</dt>
+            <dd class="col-sm-9" t-if="book.number_of_pages > 0">
+              <t t-esc="book.number_of_pages" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </template>
+</odoo>
