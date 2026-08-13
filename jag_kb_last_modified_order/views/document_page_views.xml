@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_wiki_tree_order_by_content_date" model="ir.ui.view">
+        <field name="name">document.page.list.order.by.content.date</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_tree" />
+        <field name="arch" type="xml">
+            <list position="attributes">
+                <attribute name="default_order">content_date desc,id desc</attribute>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_wiki_tree_children_order_by_content_date" model="ir.ui.view">
+        <field name="name">document.page.list.children.order.by.content.date</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_tree_children" />
+        <field name="arch" type="xml">
+            <list position="attributes">
+                <attribute name="default_order">content_date desc,id desc</attribute>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_browse_content_kanban_show_content_date" model="ir.ui.view">
+        <field name="name">document.page.browse.kanban.show.content.date</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_browse_content_kanban" />
+        <field name="arch" type="xml">
+            <kanban position="attributes">
+                <attribute name="default_order">is_category_sort desc,category_name_sort asc,content_date desc,id desc</attribute>
+            </kanban>
+            <xpath expr="//kanban/field[@name='write_date']" position="replace">
+                <field name="content_date" />
+            </xpath>
+            <xpath expr="//t[@t-name='card']//field[@name='write_date']" position="replace">
+                <field name="content_date" widget="date" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

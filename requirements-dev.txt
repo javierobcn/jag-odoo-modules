@@ -1,0 +1,10 @@
+# Tooling para generar addons con mrbob en este repo.
+# bobtemplates.odoo depende de pkg_resources; con Python 3.14
+# se requiere fijar setuptools por debajo de 81.
+mr.bob==2.0
+bobtemplates.odoo==3.4
+setuptools<81
+# Dependencias que pkg_resources requiere en este entorno.
+jaraco.text>=4,<5
+jaraco.context>=6,<7
+jaraco.functools>=4,<5

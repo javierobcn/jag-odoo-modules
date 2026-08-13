@@ -1,17 +1,31 @@
-# Copyright 2026 JAG
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
 {
-    'name': 'Jag Library',
-    'summary': """advanced library management""",
-    'version': '18.0.0.0.2',
-    'license': 'AGPL-3',
-    'author': 'JAG',
-    'website': 'https://github.com/javierobcn/jag-odoo-modules',
-    'depends': [
+    "name": "Library Management",
+    "summary": "Manage library catalog",
+    "author": "Javier Antó Garcia, Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "website": "https://github.com/OCA/community-data-files",
+    "version": "18.0.0.0.2",
+    "category": "Services/Library",
+    "depends": [
+        "base",
+        "contacts",
+        "web",
+        "product",
+        "stock",
+        "website",
+        "website_blog",
     ],
-    'data': [
+    "data": [
+        "security/library_security.xml",
+        "security/ir.model.access.csv",
+        "views/res_partner_views.xml",
+        "views/book_genre_views.xml",
+        "views/product_template_views.xml",
+        "views/jag_library_menu_views.xml",
+        "views/blog_post_views.xml",
+        "views/blog_post_book_template_views.xml",
+        "views/res_config_settings_views.xml",
+        "views/website_blog_post_title_style_views.xml",
     ],
-    'demo': [
-    ],
+    "application": True,
 }
