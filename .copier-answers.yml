@@ -1,0 +1,27 @@
+# Do NOT update manually; changes here will be overwritten by Copier
+_commit: v1.44
+_src_path: https://github.com/OCA/oca-addons-repo-template
+additional_ruff_rules: []
+convert_readme_fragments_to_markdown: true
+enable_checklog_odoo: true
+generate_requirements_txt: true
+github_check_license: true
+github_ci_extra_env: {}
+github_enable_codecov: true
+github_enable_makepot: true
+github_enable_stale_action: true
+github_enforce_dev_status_compatibility: true
+include_wkhtmltopdf: false
+odoo_test_flavor: OCB
+odoo_version: 18.0
+org_name: JAG
+org_slug: javierobcn
+postgres_image: ''
+rebel_module_groups: []
+repo_description: Tools for my own use
+repo_name: Tools for my Odoo
+repo_slug: jag-odoo-modules
+repo_website: https://github.com/javierobcn/jag-odoo-modules
+use_pyproject_toml: true
+use_ruff: true
+
