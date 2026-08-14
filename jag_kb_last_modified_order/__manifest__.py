@@ -5,7 +5,7 @@
     "category": "Knowledge",
     "author": "JAG, Javier Anto",
     "website": "https://github.com/javierobcn/jag-odoo-modules",
-    "license": "LGPL-3",
+    "license": "AGPL-3",
     "depends": ["document_page"],
     "data": ["views/document_page_views.xml"],
     "installable": True,
