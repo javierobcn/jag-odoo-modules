@@ -26,14 +26,20 @@
         <field name="name">document.page.browse.kanban.show.content.date</field>
         <field name="model">document.page</field>
         <field name="inherit_id" ref="document_page.view_browse_content_kanban" />
+        <field name="priority">99</field>
         <field name="arch" type="xml">
             <kanban position="attributes">
-                <attribute name="default_order">is_category_sort desc,category_name_sort asc,content_date desc,id desc</attribute>
+                <attribute
+                    name="default_order"
+                >is_category_sort desc,category_name_sort asc,content_date desc,id desc</attribute>
             </kanban>
             <xpath expr="//kanban/field[@name='write_date']" position="replace">
                 <field name="content_date" />
             </xpath>
-            <xpath expr="//t[@t-name='card']//field[@name='write_date']" position="replace">
+            <xpath
+                expr="//t[@t-name='card']//field[@name='write_date']"
+                position="replace"
+            >
                 <field name="content_date" widget="date" />
             </xpath>
         </field>

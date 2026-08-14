@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-  <template
-    id="website_blog_post_title_style"
-    inherit_id="website_blog.blog_post_complete"
-    name="Website Blog Post Title Style"
-  >
-    <xpath
-      expr="//section[@id='o_wblog_post_top']//h1[@id='o_wblog_post_name']"
-      position="attributes"
+    <template
+        id="website_blog_post_title_style"
+        inherit_id="website_blog.blog_post_complete"
+        name="Website Blog Post Title Style"
     >
-      <attribute
-        name="style"
-        add="color:#ffffff; background:linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(20,20,40,0.72) 100%); text-shadow:0 3px 12px rgba(0,0,0,0.85); display:inline-block; padding:0.22em 0.48em; line-height:1.3; border-radius:8px; font-weight:700; letter-spacing:0.5px; backdrop-filter:blur(4px);"
-        separator=" "
-      />
-    </xpath>
-    <xpath
-      expr="//section[@id='o_wblog_post_top']//div[@id='o_wblog_post_subtitle']"
-      position="attributes"
-    >
-      <attribute
-        name="style"
-        add="color:#e8eef5; background:rgba(0,0,0,0.55); text-shadow:0 2px 8px rgba(0,0,0,0.9); display:inline-block; padding:0.12em 0.3em; border-radius:6px; font-style:italic; font-size:0.95em; letter-spacing:0.3px;"
-        separator=" "
-      />
-    </xpath>
-  </template>
+        <xpath
+            expr="//section[@id='o_wblog_post_top']//h1[@id='o_wblog_post_name']"
+            position="attributes"
+        >
+            <attribute
+                name="style"
+                add="color:#ffffff; background:linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(20,20,40,0.72) 100%); text-shadow:0 3px 12px rgba(0,0,0,0.85); display:inline-block; padding:0.22em 0.48em; line-height:1.3; border-radius:8px; font-weight:700; letter-spacing:0.5px; backdrop-filter:blur(4px);"
+                separator=" "
+            />
+        </xpath>
+        <xpath
+            expr="//section[@id='o_wblog_post_top']//div[@id='o_wblog_post_subtitle']"
+            position="attributes"
+        >
+            <attribute
+                name="style"
+                add="color:#e8eef5; background:rgba(0,0,0,0.55); text-shadow:0 2px 8px rgba(0,0,0,0.9); display:inline-block; padding:0.12em 0.3em; border-radius:6px; font-style:italic; font-size:0.95em; letter-spacing:0.3px;"
+                separator=" "
+            />
+        </xpath>
+    </template>
 </odoo>

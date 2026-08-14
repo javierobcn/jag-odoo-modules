@@ -1,4 +1,3 @@
-
 # Copyright 2026 Javier Anto
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 
@@ -68,9 +67,7 @@ class TestDocumentPageOrder(TransactionCase):
         self.assertEqual(ordered_categories[0], category_a)
 
     def test_kanban_shows_last_contribution_date(self):
-        kanban_view_id = self.env.ref(
-            "document_page.view_browse_content_kanban"
-        ).id
+        kanban_view_id = self.env.ref("document_page.view_browse_content_kanban").id
         view = self.env["document.page"].get_view(
             view_id=kanban_view_id,
             view_type="kanban",
@@ -80,12 +77,9 @@ class TestDocumentPageOrder(TransactionCase):
         self.assertTrue(arch.xpath("//kanban/field[@name='content_date']"))
         self.assertTrue(
             arch.xpath(
-                "//kanban[@default_order='is_category_sort desc,category_name_sort asc,content_date desc,id desc']"
+                "//kanban[@default_order='is_category_sort desc,"
+                "category_name_sort asc,content_date desc,id desc']"
             )
         )
-        self.assertTrue(
-            arch.xpath(
-                "//t[@t-name='card']//field[@name='content_date']"
-            )
-        )
+        self.assertTrue(arch.xpath("//t[@t-name='card']//field[@name='content_date']"))
         self.assertFalse(arch.xpath("//kanban/field[@name='write_date']"))
