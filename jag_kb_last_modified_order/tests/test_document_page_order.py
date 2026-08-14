@@ -73,13 +73,16 @@ class TestDocumentPageOrder(TransactionCase):
             view_type="kanban",
         )
         arch = etree.XML(view["arch"])
+        default_order = ",".join(
+            [
+                "is_category_sort desc",
+                "category_name_sort asc",
+                "content_date desc",
+                "id desc",
+            ]
+        )
 
         self.assertTrue(arch.xpath("//kanban/field[@name='content_date']"))
-        self.assertTrue(
-            arch.xpath(
-                "//kanban[@default_order='is_category_sort desc,"
-                "category_name_sort asc,content_date desc,id desc']"
-            )
-        )
+        self.assertTrue(arch.xpath(f"//kanban[@default_order='{default_order}']"))
         self.assertTrue(arch.xpath("//t[@t-name='card']//field[@name='content_date']"))
         self.assertFalse(arch.xpath("//kanban/field[@name='write_date']"))
