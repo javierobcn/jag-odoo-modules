@@ -2,20 +2,24 @@
     <record id="module_category_services_library" model="ir.module.category">
         <field name="name">Services / Library</field>
     </record>
+    <record id="library_privilege" model="res.groups.privilege">
+        <field name="name">Library</field>
+        <field name="category_id" ref="jag_library.module_category_services_library" />
+    </record>
     <!-- Library User Group -->
     <record id="library_group_user" model="res.groups">
         <field name="name">User</field>
-        <field name="category_id" ref="jag_library.module_category_services_library" />
+        <field name="privilege_id" ref="jag_library.library_privilege" />
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
     </record>
 
     <!-- Library Manager Group -->
     <record id="library_group_manager" model="res.groups">
         <field name="name">Manager</field>
-        <field name="category_id" ref="jag_library.module_category_services_library" />
+        <field name="privilege_id" ref="jag_library.library_privilege" />
         <field name="implied_ids" eval="[(4, ref('library_group_user'))]" />
         <field
-            name="users"
+            name="user_ids"
             eval="[(4, ref('base.user_root')),
                 (4, ref('base.user_admin'))]"
         />

@@ -86,6 +86,17 @@ class TestBook(TransactionCase):
             {"name": "Shelf 2", "location_id": self.stock_location.id}
         )
 
+    def test_library_groups_use_privilege(self):
+        library_privilege = self.env.ref("jag_library.library_privilege")
+        self.assertEqual(
+            self.env.ref("jag_library.library_group_user").privilege_id,
+            library_privilege,
+        )
+        self.assertEqual(
+            self.env.ref("jag_library.library_group_manager").privilege_id,
+            library_privilege,
+        )
+
     # --- EXISTING TESTS (for reference) ---
 
     def test_book_create(self):
@@ -318,7 +329,6 @@ class TestBook(TransactionCase):
         # Create and process the stock move
         move = self.env["stock.move"].create(
             {
-                "name": "Test Move",
                 "product_id": self.book_odoo.product_variant_id.id,
                 "product_uom_qty": 1,
                 "product_uom": self.book_odoo.uom_id.id,

@@ -1,7 +1,7 @@
 {
     "name": "Knowledge Last Modified Order",
     "summary": "Order knowledge articles by last modification date",
-    "version": "19.0.0.0.1",
+    "version": "19.0.1.0.0",
     "category": "Knowledge",
     "author": "JAG, Javier Anto",
     "website": "https://github.com/javierobcn/jag-odoo-modules",

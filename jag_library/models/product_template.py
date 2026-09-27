@@ -157,19 +157,15 @@ class ProductTemplate(models.Model):
             # Join the unique location names
             book.location = ", ".join(list(set(locations)))
 
-    _sql_constraints = [
-        (
-            "library_book_name_date_uq",
-            "UNIQUE (name, publication_date)",
-            "Book title and publication date must be unique.",
-        ),
-        (
-            "library_book_check_date",
-            "CHECK (publication_date <= current_date)",
-            "Publication date must not be in the future.",
-        ),
-        ("isbn_uniq", "UNIQUE (isbn)", "ISBN must be unique."),
-    ]
+    _library_book_name_date_uq = models.Constraint(
+        "UNIQUE (name, publication_date)",
+        "Book title and publication date must be unique.",
+    )
+    _library_book_check_date = models.Constraint(
+        "CHECK (publication_date <= current_date)",
+        "Publication date must not be in the future.",
+    )
+    _isbn_uniq = models.Constraint("UNIQUE (isbn)", "ISBN must be unique.")
 
     @api.constrains("isbn")
     def _constrain_isbn_valid(self):

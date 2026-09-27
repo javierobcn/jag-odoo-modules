@@ -6,7 +6,7 @@
         name="Website Blog Post Title Style"
     >
         <xpath
-            expr="//section[@id='o_wblog_post_top']//h1[@id='o_wblog_post_name']"
+            expr="//section[@id='o_wblog_post_top']//h1[@t-field='blog_post.name']"
             position="attributes"
         >
             <attribute
@@ -16,7 +16,7 @@
             />
         </xpath>
         <xpath
-            expr="//section[@id='o_wblog_post_top']//div[@id='o_wblog_post_subtitle']"
+            expr="//section[@id='o_wblog_post_top']//div[@t-field='blog_post.subtitle']"
             position="attributes"
         >
             <attribute
