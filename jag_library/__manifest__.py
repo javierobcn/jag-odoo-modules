@@ -4,7 +4,7 @@
     "author": "JAG, Javier Antó Garcia, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "website": "https://github.com/javierobcn/jag-odoo-modules",
-    "version": "18.0.0.0.2",
+    "version": "19.0.0.0.1",
     "category": "Services/Library",
     "depends": [
         "base",

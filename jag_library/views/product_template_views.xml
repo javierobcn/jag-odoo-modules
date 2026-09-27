@@ -103,21 +103,23 @@
                     </group>
                 </page>
             </xpath>
-            <xpath expr="//header" position="inside">
-                <button
-                    name="action_publish_to_blog"
-                    type="object"
-                    string="Publish to Blog"
-                    class="oe_highlight"
-                    invisible="not is_book"
-                />
-                <button
-                    name="button_check_isbn"
-                    type="object"
-                    string="Verify ISBN"
-                    class="oe_highlight"
-                    invisible="not is_book"
-                />
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button
+                        name="action_publish_to_blog"
+                        type="object"
+                        string="Publish to Blog"
+                        class="oe_highlight"
+                        invisible="not is_book"
+                    />
+                    <button
+                        name="button_check_isbn"
+                        type="object"
+                        string="Verify ISBN"
+                        class="oe_highlight"
+                        invisible="not is_book"
+                    />
+                </header>
             </xpath>
         </field>
     </record>
